@@ -69,5 +69,9 @@
   <img src="Attached File/aquarium_feeding.png" width="600" alt="aquarium_feeding.png">
 </p>
 
+## 使用素材
+- 水槽シミュレータの観賞魚素材：[ヌー＠ドット絵素材置き場](http://damagedgold.wp.xdomain.jp/2020/09/26/kansyoufish50/) より（フリー素材）
+- 水槽シミュレータの背景画像：[DOT ILLUST](https://dot-illust.net)より（非商用利用）
+
 ## 環境
 追記予定
