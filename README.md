@@ -3,8 +3,9 @@
 
 ## 使用技術
 <p style="display: inline">
-    <!-- 言語一覧 -->
     <img src="https://img.shields.io/badge/-Kotlin-0095D5.svg?logo=kotlin&style=plastic" alt="Kotlin">
+    <img src="https://img.shields.io/badge/-Intellijidea-000000.svg?logo=intellijidea&style=plastic" alt="Intellijidea">
+    <img src="https://img.shields.io/badge/-Compose%20for%20Desktop-0095D5.svg?logo=kotlin&style=plastic" alt="Compose for Desktop">
 </p>
 
 ## 目次
