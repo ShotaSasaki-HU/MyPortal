@@ -69,11 +69,16 @@ object TransactionManager {
             // ドキュメントフォルダの取得
             val documentsDir = System.getProperty("user.home") + "/Documents"
             val appFolderPath = "$documentsDir/MyPortal"
+            val backupDirPath = "$appFolderPath/backup"
             val tempFilePath = "$appFolderPath/temp_transaction.csv"
             val finalFilePath = "$appFolderPath/transaction.csv"
 
             val tempFile = File(tempFilePath)
             val finalFile = File(finalFilePath)
+            val backupDir = File(backupDirPath)
+            if (!backupDir.exists()) {
+                backupDir.mkdirs()
+            }
 
             tempFile.writeText("") // 一時ファイルをクリア
             val header = listOf("id", "type", "item", "date", "amount", "paymentMethod", "memo", "category", "isPrivate")
@@ -120,6 +125,12 @@ object TransactionManager {
             // 書き込み成功後、一時ファイルを正式なファイルに置き換え
             if (tempFile.exists()) {
                 tempFile.copyTo(finalFile, overwrite = true)
+
+                // バックアップ追加部分（2025/05/16/19:59）（飛んだね．）
+                val dateStr = LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"))
+                val backupFile = File("$backupDirPath/transaction_backup_$dateStr.csv")
+                finalFile.copyTo(backupFile, overwrite = true)
+
                 tempFile.delete()
             }
         } catch (e: Exception) {
